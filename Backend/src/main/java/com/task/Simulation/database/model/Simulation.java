@@ -1,12 +1,11 @@
 package com.task.Simulation.database.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
+import java.util.List;
 
 @Entity
 @Data
@@ -19,9 +18,13 @@ public class Simulation {
 
     String n;
     int p;
-    int r;
-    int m;
+    int i;
+    float r;
+    float m;
     int ti;
     int tm;
     int ts;
+
+    @OneToMany(mappedBy = "simulation", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Population> populationList;
 }
