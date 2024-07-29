@@ -1,9 +1,9 @@
-HELP.md
-.gradle
-build/
-!gradle/wrapper/gradle-wrapper.jar
-!**/src/main/**/build/
-!**/src/test/**/build/
+Backend/HELP.md
+Backend/.gradle
+Backend/build/
+Backend/!gradle/wrapper/gradle-wrapper.jar
+Backend/!**/src/main/**/build/
+Backend/!**/src/test/**/build/
 
 ### STS ###
 .apt_generated
@@ -22,16 +22,16 @@ bin/
 *.iws
 *.iml
 *.ipr
-out/
+Backend/out/
 !**/src/main/**/out/
 !**/src/test/**/out/
 
 ### NetBeans ###
-/nbproject/private/
-/nbbuild/
-/dist/
-/nbdist/
-/.nb-gradle/
+Backend//nbproject/private/
+Backend//nbbuild/
+Backend//dist/
+Backend//nbdist/
+Backend//.nb-gradle/
 
 ### VS Code ###
-.vscode/
+Backend/.vscode/
