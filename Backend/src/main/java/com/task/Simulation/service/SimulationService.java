@@ -102,6 +102,6 @@ public class SimulationService {
         savedSimulation.getPopulationList().addAll(calculateSimulation(savedSimulation));
 
         simulationRepository.save(savedSimulation);
-        return Response.builder().status(HttpStatus.OK).build();
+        return Response.builder().status(HttpStatus.OK).message("You have successfully edited the simulation").build();
     }
 }

@@ -3,6 +3,7 @@ import { ManageSimulationComponent } from './view/manage-simulation/manage-simul
 
 export const routes: Routes = [
     { path: 'create', component: ManageSimulationComponent },
+    { path: 'edit/:id', component: ManageSimulationComponent },
     { path: '', redirectTo: '/list', pathMatch: 'full' },
     { path: '**', redirectTo: '/list' }
 ];

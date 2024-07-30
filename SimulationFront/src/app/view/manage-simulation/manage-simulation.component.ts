@@ -1,9 +1,10 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { SimulationService } from '../../service/simulation.service';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { Simulation } from '../../model/Simulation';
 import { Response } from '../../model/Response';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-manage-simulation',
@@ -12,7 +13,7 @@ import { Response } from '../../model/Response';
   templateUrl: './manage-simulation.component.html',
   styleUrls: ['./manage-simulation.component.scss', '../../../assets/styles/formElement.scss']
 })
-export class ManageSimulationComponent {
+export class ManageSimulationComponent implements OnInit{
   n: string = '';
   p: number | null = null;
   i: number | null = null;
@@ -23,12 +24,42 @@ export class ManageSimulationComponent {
   ts: number | null = null;
 
   errorMessage: string = '';
+  
+  editMode = false;
+  simulationId = 0;
 
-  constructor(private simulationService: SimulationService) {
+  constructor(private simulationService: SimulationService, private route: ActivatedRoute, private router: Router) {
 
   }
 
-  createSimulation() {
+  ngOnInit(): void {
+    this.route.paramMap.subscribe(params => {
+      let id = params.get('id');
+      if (id) {
+        this.simulationId = parseInt(id);
+        this.editMode = true;
+
+        this.simulationService.getSimulation(this.simulationId).subscribe(simulation => {
+          if(simulation == null){
+            this.router.navigate([`/create`]);
+            return;
+          }
+  
+          this.n = simulation.n;
+          this.p = simulation.p;
+          this.i = simulation.i;
+          this.r = simulation.r;
+          this.m = simulation.m;
+          this.ti = simulation.ti;
+          this.tm = simulation.tm;
+          this.ts = simulation.ts;
+        });
+        
+      }
+    });
+  }
+
+  submit(){
     if(!this.p || !this.i || !this.r || !this.m || !this.ti || !this.tm || !this.ts){
       this.errorMessage = "Inputs cannot be empty"
       return;
@@ -40,8 +71,29 @@ export class ManageSimulationComponent {
     this.errorMessage = '';
 
     let simulation = new Simulation(this.n, this.p, this.i, this.r, this.m, this.ti, this.tm, this.ts);
+    if(this.editMode){
+      this.editSimulation(simulation);
+    }
+    else{
+      this.createSimulation(simulation);
+    }
+  }
 
+  createSimulation(simulation: Simulation) {
     this.simulationService.createSimulation(simulation).subscribe({
+      next: (response: Response) => {
+        if (response) {
+          this.errorMessage = response.message;
+        }
+      },
+      error: (e) => {
+        this.errorMessage = e.error;
+      }
+    });
+  }
+
+  editSimulation(simulation: Simulation) {
+    this.simulationService.editSimulation(this.simulationId, simulation).subscribe({
       next: (response: Response) => {
         if (response) {
           this.errorMessage = response.message;
