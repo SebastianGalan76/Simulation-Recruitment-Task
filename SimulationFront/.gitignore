@@ -1,40 +1,4 @@
-Backend/HELP.md
-Backend/.gradle
-Backend/build/
-Backend/!gradle/wrapper/gradle-wrapper.jar
-Backend/!**/src/main/**/build/
-Backend/!**/src/test/**/build/
-
-### STS ###
-.apt_generated
-.classpath
-.factorypath
-.project
-.settings
-.springBeans
-.sts4-cache
-bin/
-!**/src/main/**/bin/
-!**/src/test/**/bin/
-
-### IntelliJ IDEA ###
-.idea
-*.iws
-*.iml
-*.ipr
-Backend/out/
-!**/src/main/**/out/
-!**/src/test/**/out/
-
-### NetBeans ###
-Backend//nbproject/private/
-Backend//nbbuild/
-Backend//dist/
-Backend//nbdist/
-Backend//.nb-gradle/
-
-### VS Code ###
-Backend/.vscode/
+# See https://docs.github.com/get-started/getting-started-with-git/ignoring-files for more about ignoring files.
 
 # Compiled output
 SimulationFront/dist
