@@ -24,7 +24,7 @@ public class SimulationService {
         simulation = simulationRepository.save(simulation);
         simulation.setPopulationList(calculateSimulation(simulation));
 
-        return Response.builder().status(HttpStatus.OK).build();
+        return Response.builder().status(HttpStatus.OK).message("You have successfully created a new simulation").build();
     }
 
     private List<Population> calculateSimulation(Simulation simulation) {
