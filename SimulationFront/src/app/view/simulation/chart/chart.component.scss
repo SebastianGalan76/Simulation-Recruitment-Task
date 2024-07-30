@@ -1,0 +1,17 @@
+@import '../../../../assets/styles/base';
+
+.chart{
+    width: fit-content;
+    padding: 20px;
+    border-radius: 20px;
+
+    background-color: $color-dark;
+    color: $color-white;
+
+    .title{
+        text-align: center;
+        font-weight: 800;
+        font-size: 1.4em;
+        padding: 15px 0;
+    }
+}

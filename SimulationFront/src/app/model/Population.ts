@@ -1,13 +1,13 @@
 export class Population {
   id: number;
-  pi: string;
+  pi: number;
   pv: number;
   pm: number;
   pr: number;
 
   constructor(
     id: number,
-    pi: string,
+    pi: number,
     pv: number,
     pm: number,
     pr: number,

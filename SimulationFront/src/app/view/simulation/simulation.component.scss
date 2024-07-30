@@ -3,6 +3,7 @@
 .container{
     width: 100%;
     min-height: 100vh;
+    height: 10000px;
 
     display: flex;
     flex-direction: column;
@@ -42,7 +43,6 @@
 
     #population-per-day-data{
         margin-top: 50px;
-
         width: 500px;
         
         .title{
@@ -54,5 +54,11 @@
             height: 500px;
             overflow-y: auto;
         }
+    }
+
+    #charts-container{
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
     }
 }

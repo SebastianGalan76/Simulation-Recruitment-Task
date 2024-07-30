@@ -1,32 +1,40 @@
-@import 'base';
+@import "../../../assets/styles/base";
 
-aside{
+aside {
     width: 250px;
-    min-height: 100vh;
+    position: relative;
 
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    #aside-wrapper {
+        min-height: 100vh;
+        
+        position: fixed;
+        width: 250px;
+        top: 0;
 
-    border-right: 2px solid $color-theme;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
 
-    .title{
-        font-weight: 800;
-        padding: 5px 10px;
-        color: $color-theme;
-    }
+        border-right: 2px solid $color-theme;
 
-    ul{
-        list-style-type: none;
-        font-size: 1.2em;
-
-        li{
+        .title {
+            font-weight: 800;
             padding: 5px 10px;
+            color: $color-theme;
         }
 
-        li:hover{
-            cursor: pointer;
-            background-color: $color-dark;
+        ul {
+            list-style-type: none;
+            font-size: 1.2em;
+
+            li {
+                padding: 5px 10px;
+            }
+
+            li:hover {
+                cursor: pointer;
+                background-color: $color-dark;
+            }
         }
     }
 }

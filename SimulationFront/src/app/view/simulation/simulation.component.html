@@ -1,7 +1,7 @@
 <div class="container">
     <div class="header">
         Symulacja<br>
-        <span>DWdawdwadwad</span>
+        <span *ngIf="simulation"> {{ simulation.n }} </span>
     </div>
 
     <div id="simulation-data">
@@ -22,7 +22,7 @@
                 </tr>
             </thead>
             <tbody>
-                <tr *ngIf="simulation != null">
+                <tr *ngIf="simulation">
                     <td>{{ simulation.n }}</td>
                     <td>{{ simulation.p }}</td>
                     <td>{{ simulation.i }}</td>
@@ -35,7 +35,7 @@
                         <i class="fa-solid fa-pen-to-square" (click)="editSimulation(simulation.id)"></i>
                         <i class="fa-solid fa-trash" (click)="deleteSimulation(simulation.id)"></i>
                     </td>
-                  </tr>
+                </tr>
             </tbody>
         </table>
     </div>
@@ -63,9 +63,27 @@
                         <td>{{ population.pv }}</td>
                         <td>{{ population.pm }}</td>
                         <td>{{ population.pr }}</td>
-                      </tr>
+                    </tr>
                 </tbody>
             </table>
         </div>
+    </div>
+
+    <div id="charts-container">
+        <app-chart [chartInfo]="getPiPvPmPrChartInfo()" />
+
+        <app-chart [chartInfo]="chartInfo"></app-chart>
+
+        <div class="slider-container">
+            <input type="range" id="slider" min="0" [max]="simulation.populationList.length - 1" value="0"
+                class="slider" #dddaw (input)="onSliderChange(dddaw.value)">
+            <p>Day: <span id="sliderValue"></span></p>
+        </div>
+
+        <app-chart [chartInfo]="getPiPvPmPrDifferenceChartInfo()" />
+
+        <app-chart [chartInfo]="getInfectionsChartInfo()" />
+
+        <app-chart [chartInfo]="getMortalityChartInfo()" />
     </div>
 </div>

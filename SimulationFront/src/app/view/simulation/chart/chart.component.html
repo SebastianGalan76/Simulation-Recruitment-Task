@@ -1,0 +1,4 @@
+<div class="chart" *ngIf="chartInfo">
+    <div class="title">{{chartInfo.title}}</div>
+    <canvas style="width: 900px; height: 400px;" baseChart [data]="chartInfo.chartData" [options]="chartInfo.chartOptions" [type]="chartInfo.type"> </canvas>
+</div>
