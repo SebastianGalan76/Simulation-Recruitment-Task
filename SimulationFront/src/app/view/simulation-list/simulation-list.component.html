@@ -1,0 +1,38 @@
+<div class="container">
+    <div class="header">
+        Simulation list
+    </div>
+
+    <table id="simulation-table">
+        <thead>
+            <tr>
+                <th>N</th>
+                <th>P</th>
+                <th>I</th>
+                <th>R</th>
+                <th>M</th>
+                <th>Ti</th>
+                <th>Tm</th>
+                <th>Ts</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let simulation of simulations">
+                <td>{{ simulation.n }}</td>
+                <td>{{ simulation.p }}</td>
+                <td>{{ simulation.i }}</td>
+                <td>{{ simulation.r }}</td>
+                <td>{{ simulation.m }}</td>
+                <td>{{ simulation.ti }}</td>
+                <td>{{ simulation.tm }}</td>
+                <td>{{ simulation.ts }}</td>
+                <td class="action-buttons">
+                    <i class="fa-solid fa-magnifying-glass" (click)="showInfo(simulation.id)"></i>
+                    <i class="fa-solid fa-pen-to-square" (click)="editSimulation(simulation.id)"></i>
+                    <i class="fa-solid fa-trash" (click)="deleteSimulation(simulation.id)"></i>
+                </td>
+              </tr>
+        </tbody>
+    </table>
+</div>

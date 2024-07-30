@@ -70,7 +70,7 @@ export class ManageSimulationComponent implements OnInit{
     }
     this.errorMessage = '';
 
-    let simulation = new Simulation(this.n, this.p, this.i, this.r, this.m, this.ti, this.tm, this.ts);
+    let simulation = new Simulation(this.simulationId, this.n, this.p, this.i, this.r, this.m, this.ti, this.tm, this.ts);
     if(this.editMode){
       this.editSimulation(simulation);
     }

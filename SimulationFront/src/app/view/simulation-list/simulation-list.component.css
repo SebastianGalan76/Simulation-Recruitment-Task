@@ -1,0 +1,44 @@
+.container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.container .header {
+  font-weight: 600;
+  font-size: 2.6em;
+  padding: 50px;
+}
+.container #simulation-table {
+  width: 90%;
+  border-collapse: collapse;
+}
+.container #simulation-table thead th {
+  background-color: rgba(0, 0, 0, 0.1647058824);
+  padding: 3px 10px;
+}
+.container #simulation-table th,
+.container #simulation-table td {
+  border: 2px solid rgba(0, 0, 0, 0.3411764706);
+  padding: 3px 10px;
+}
+.container #simulation-table .center {
+  text-align: center;
+}
+.container #simulation-table .action-buttons {
+  width: 130px;
+}
+.container #simulation-table .action-buttons i {
+  margin: 0 10px;
+}
+.container #simulation-table .action-buttons .fa-trash {
+  color: rgb(252, 99, 107);
+}
+.container #simulation-table .action-buttons .fa-trash:hover {
+  color: rgb(199, 52, 59);
+}
+.container #simulation-table .action-buttons i:hover {
+  cursor: pointer;
+  color: rgba(255, 255, 255, 0.4862745098);
+}/*# sourceMappingURL=simulation-list.component.css.map */

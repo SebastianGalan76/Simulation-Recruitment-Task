@@ -7,6 +7,8 @@ import lombok.Data;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @Data
 @RequestMapping("/api/simulation")
@@ -17,6 +19,11 @@ public class SimulationController {
     @PostMapping
     public Response createSimulation(@RequestBody Simulation simulation){
         return simulationService.createSimulation(simulation);
+    }
+
+    @GetMapping
+    public List<Simulation> getAllSimulations(){
+        return simulationService.getAll();
     }
 
     @GetMapping("/{id}")

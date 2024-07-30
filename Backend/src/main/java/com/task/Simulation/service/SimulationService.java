@@ -104,4 +104,8 @@ public class SimulationService {
         simulationRepository.save(savedSimulation);
         return Response.builder().status(HttpStatus.OK).message("You have successfully edited the simulation").build();
     }
+
+    public List<Simulation> getAll() {
+        return simulationRepository.findAll();
+    }
 }
