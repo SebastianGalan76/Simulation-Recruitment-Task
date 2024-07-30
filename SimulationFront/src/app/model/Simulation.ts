@@ -1,33 +1,39 @@
-export class Simulation {
-    id: number;  
-    n: string;
-    p: number;
-    i: number;
-    r: number;
-    m: number;
-    ti: number;
-    tm: number;
-    ts: number;
+import { Population } from "./Population";
 
-    constructor(
-        id: number,
-        n: string,
-        p: number,
-        i: number,
-        r: number,
-        m: number,
-        ti: number,
-        tm: number,
-        ts: number
-      ) {
-        this.id = id;
-        this.n = n;
-        this.p = p;
-        this.i = i;
-        this.r = r;
-        this.m = m;
-        this.ti = ti;
-        this.tm = tm;
-        this.ts = ts;
-      }
+export class Simulation {
+  id: number;
+  n: string;
+  p: number;
+  i: number;
+  r: number;
+  m: number;
+  ti: number;
+  tm: number;
+  ts: number;
+
+  populationList: Population[];
+
+  constructor(
+    id: number,
+    n: string,
+    p: number,
+    i: number,
+    r: number,
+    m: number,
+    ti: number,
+    tm: number,
+    ts: number,
+    populationList: Population[]
+  ) {
+    this.id = id;
+    this.n = n;
+    this.p = p;
+    this.i = i;
+    this.r = r;
+    this.m = m;
+    this.ti = ti;
+    this.tm = tm;
+    this.ts = ts;
+    this.populationList = populationList;
+  }
 }

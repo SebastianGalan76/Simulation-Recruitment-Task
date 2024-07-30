@@ -1,0 +1,45 @@
+.container {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.container .header {
+  font-weight: 600;
+  font-size: 2.6em;
+  padding: 50px;
+  text-align: center;
+}
+.container .header span {
+  font-size: 0.4em;
+  font-style: italic;
+}
+.container #simulation-data {
+  padding: 0 100px;
+  width: 100%;
+}
+.container #simulation-data .title {
+  font-size: 1.4em;
+  padding: 10px 30px;
+}
+.container #simulation-data #simulation-table {
+  width: 100% !important;
+}
+.container span#raport {
+  font-size: 2em;
+  font-weight: 800;
+  padding: 50px 0;
+}
+.container #population-per-day-data {
+  margin-top: 50px;
+  width: 500px;
+}
+.container #population-per-day-data .title {
+  font-size: 1.4em;
+  padding: 10px 30px;
+}
+.container #population-per-day-data .table-container {
+  height: 500px;
+  overflow-y: auto;
+}/*# sourceMappingURL=simulation.component.css.map */

@@ -1,0 +1,58 @@
+@import '../../../assets/styles/base';
+
+.container{
+    width: 100%;
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .header{
+        font-weight: 600;
+        font-size: 2.6em;
+        padding: 50px;
+        text-align: center;
+
+        span{
+            font-size: 0.4em;
+            font-style: italic;
+        }
+    }
+
+    #simulation-data{
+        padding: 0 100px;
+        width: 100%;
+
+        .title{
+            font-size: 1.4em;
+            padding: 10px 30px;
+        }
+
+        #simulation-table{
+            width: 100% !important;
+        }
+    }
+
+    span#raport{
+        font-size: 2em;
+        font-weight: 800;
+        padding: 50px 0;
+    }
+
+    #population-per-day-data{
+        margin-top: 50px;
+
+        width: 500px;
+        
+        .title{
+            font-size: 1.4em;
+            padding: 10px 30px;
+        }
+
+        .table-container{
+            height: 500px;
+            overflow-y: auto;
+        }
+    }
+}

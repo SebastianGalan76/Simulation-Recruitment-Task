@@ -26,11 +26,11 @@ export class SimulationListComponent {
   showInfo(campaignId: number){
     this.router.navigate([`/info/${campaignId}`]);
   }
-  deleteSimulation(campaignId: number){
-    this.simulationService.deleteSimulation(campaignId);
-    this.simulations = this.simulations?.filter(campaign => campaign.id !== campaignId);
+  deleteSimulation(simulationId: number){
+    this.simulationService.deleteSimulation(simulationId);
+    this.simulations = this.simulations?.filter(campaign => campaign.id !== simulationId);
   }
-  editSimulation(campaignId: number){
-    this.router.navigate([`/edit/${campaignId}`]);
+  editSimulation(simulationId: number){
+    this.router.navigate([`/edit/${simulationId}`]);
   }
 }

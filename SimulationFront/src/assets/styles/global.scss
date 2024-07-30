@@ -1,3 +1,5 @@
+@import 'base';
+
 * {
     margin: 0;
     padding: 0;
@@ -23,6 +25,9 @@ body {
         flex-grow: 1;
     }
     app-simulation-list {
+        flex-grow: 1;
+    }
+    app-simulation{
         flex-grow: 1;
     }
 }
@@ -65,4 +70,44 @@ input[type="number"]::-webkit-outer-spin-button,
 input[type="number"]::-webkit-inner-spin-button {
     -webkit-appearance: none;
     margin: 0;
+}
+
+#simulation-table {
+    width: 90%;
+
+    border-collapse: collapse;
+    thead th {
+        background-color: $color-dark;
+        padding: 3px 10px;
+    }
+
+    th,
+    td {
+        border: 2px solid #00000057;
+        padding: 3px 10px;
+    }
+
+    .center {
+        text-align: center;
+    }
+
+    .action-buttons {
+        width: 130px;
+        
+        i{
+            margin: 0 10px;
+        }
+
+        .fa-trash {
+            color: $color-red;
+        }
+        .fa-trash:hover {
+            color: $color-red-dark;
+        }
+
+        i:hover {
+            cursor: pointer;
+            color: #ffffff7c;
+        }
+    }
 }

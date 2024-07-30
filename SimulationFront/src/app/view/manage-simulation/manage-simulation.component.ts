@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { SimulationService } from '../../service/simulation.service';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
-import { Simulation } from '../../model/Simulation';
+import { SimulationDto } from '../../model/SimulationDto';
 import { Response } from '../../model/Response';
 import { ActivatedRoute, Router } from '@angular/router';
 
@@ -70,7 +70,7 @@ export class ManageSimulationComponent implements OnInit{
     }
     this.errorMessage = '';
 
-    let simulation = new Simulation(this.simulationId, this.n, this.p, this.i, this.r, this.m, this.ti, this.tm, this.ts);
+    let simulation = new SimulationDto(this.n, this.p, this.i, this.r, this.m, this.ti, this.tm, this.ts);
     if(this.editMode){
       this.editSimulation(simulation);
     }
@@ -79,7 +79,7 @@ export class ManageSimulationComponent implements OnInit{
     }
   }
 
-  createSimulation(simulation: Simulation) {
+  createSimulation(simulation: SimulationDto) {
     this.simulationService.createSimulation(simulation).subscribe({
       next: (response: Response) => {
         if (response) {
@@ -92,7 +92,7 @@ export class ManageSimulationComponent implements OnInit{
     });
   }
 
-  editSimulation(simulation: Simulation) {
+  editSimulation(simulation: SimulationDto) {
     this.simulationService.editSimulation(this.simulationId, simulation).subscribe({
       next: (response: Response) => {
         if (response) {
