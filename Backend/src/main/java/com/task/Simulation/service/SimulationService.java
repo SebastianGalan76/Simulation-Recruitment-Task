@@ -74,4 +74,34 @@ public class SimulationService {
 
         return populationPerDay;
     }
+
+    public Simulation getById(Long id) {
+        return simulationRepository.findById(id).orElse(null);
+    }
+
+    @Transactional
+    public Response editSimulation(Long id, Simulation simulation) {
+        Simulation savedSimulation = getById(id);
+        if(savedSimulation == null){
+            return Response.builder().status(HttpStatus.BAD_REQUEST).build();
+        }
+
+        savedSimulation.setN(simulation.getN());
+        savedSimulation.setP(simulation.getP());
+        savedSimulation.setI(simulation.getI());
+        savedSimulation.setR(simulation.getR());
+        savedSimulation.setM(simulation.getM());
+        savedSimulation.setTi(simulation.getTi());
+        savedSimulation.setTm(simulation.getTm());
+        savedSimulation.setTs(simulation.getTs());
+
+        while (!savedSimulation.getPopulationList().isEmpty()) {
+            savedSimulation.getPopulationList().remove(0);
+        }
+
+        savedSimulation.getPopulationList().addAll(calculateSimulation(savedSimulation));
+
+        simulationRepository.save(savedSimulation);
+        return Response.builder().status(HttpStatus.OK).build();
+    }
 }
