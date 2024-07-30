@@ -1,0 +1,13 @@
+aside {
+  width: 250px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+aside ul {
+  list-style-type: none;
+}
+aside ul li {
+  padding: 5px 10px;
+}/*# sourceMappingURL=aside-menu.component.css.map */
