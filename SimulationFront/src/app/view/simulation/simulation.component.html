@@ -1,6 +1,6 @@
 <div class="container">
     <div class="header">
-        Symulacja<br>
+        Simulation<br>
         <span *ngIf="simulation"> {{ simulation.n }} </span>
     </div>
 
@@ -40,7 +40,7 @@
         </table>
     </div>
 
-    <span id="raport">Raport</span>
+    <span id="report">Report</span>
 
     <div id="population-per-day-data">
         <div class="title">Population per day</div>
@@ -70,20 +70,21 @@
     </div>
 
     <div id="charts-container">
-        <app-chart [chartInfo]="getPiPvPmPrChartInfo()" />
+        <div class="title">Charts</div>
+
+        <app-chart [chartInfo]="this.chartService.getPiPvPmPrChartInfo(simulation)" />
 
         <app-chart [chartInfo]="chartInfo"></app-chart>
-
         <div class="slider-container">
             <input type="range" id="slider" min="0" [max]="simulation.populationList.length - 1" value="0"
                 class="slider" #dddaw (input)="onSliderChange(dddaw.value)">
-            <p>Day: <span id="sliderValue"></span></p>
+            <p>Day: <span id="sliderValue"> {{ sliderValue + 1}}</span></p>
         </div>
 
-        <app-chart [chartInfo]="getPiPvPmPrDifferenceChartInfo()" />
+        <app-chart [chartInfo]="this.chartService.getPiPvPmPrDifferenceChartInfo(simulation)" />
 
-        <app-chart [chartInfo]="getInfectionsChartInfo()" />
+        <app-chart [chartInfo]="this.chartService.getInfectionsChartInfo(simulation)" />
 
-        <app-chart [chartInfo]="getMortalityChartInfo()" />
+        <app-chart [chartInfo]="this.chartService.getMortalityChartInfo(simulation)" />
     </div>
 </div>

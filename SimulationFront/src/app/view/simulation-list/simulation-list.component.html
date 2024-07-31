@@ -28,11 +28,13 @@
                 <td>{{ simulation.tm }}</td>
                 <td>{{ simulation.ts }}</td>
                 <td class="action-buttons">
-                    <i class="fa-solid fa-magnifying-glass" (click)="showInfo(simulation.id)"></i>
-                    <i class="fa-solid fa-pen-to-square" (click)="editSimulation(simulation.id)"></i>
-                    <i class="fa-solid fa-trash" (click)="deleteSimulation(simulation.id)"></i>
+                    <i class="fa-solid fa-magnifying-glass" title="Show simulation report" (click)="showInfo(simulation.id)"></i>
+                    <i class="fa-solid fa-pen-to-square" title="Edit simulation" (click)="editSimulation(simulation.id)"></i>
+                    <i class="fa-solid fa-trash" title="Remove simulation" (click)="deleteSimulation(simulation.id)"></i>
                 </td>
               </tr>
         </tbody>
     </table>
+
+    <a href="/create"><div class="create-simulation-button">Create simulation</div></a>
 </div>

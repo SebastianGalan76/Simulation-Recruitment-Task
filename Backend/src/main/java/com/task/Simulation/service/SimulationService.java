@@ -108,4 +108,8 @@ public class SimulationService {
     public List<Simulation> getAll() {
         return simulationRepository.findAll();
     }
+
+    public void delete(Long id) {
+        simulationRepository.findById(id).ifPresent(simulationRepository::delete);
+    }
 }

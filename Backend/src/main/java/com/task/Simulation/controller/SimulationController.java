@@ -35,4 +35,9 @@ public class SimulationController {
     public Response editSimulation(@PathVariable Long id, @RequestBody Simulation simulation){
         return simulationService.editSimulation(id, simulation);
     }
+
+    @DeleteMapping("/{id}")
+    public void deleteSimulationById(@PathVariable Long id){
+        simulationService.delete(id);
+    }
 }

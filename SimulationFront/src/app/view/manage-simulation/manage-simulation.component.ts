@@ -96,7 +96,7 @@ export class ManageSimulationComponent implements OnInit{
     this.simulationService.editSimulation(this.simulationId, simulation).subscribe({
       next: (response: Response) => {
         if (response) {
-          this.errorMessage = response.message;
+          this.router.navigate([`/info/${this.simulationId}`]);
         }
       },
       error: (e) => {
