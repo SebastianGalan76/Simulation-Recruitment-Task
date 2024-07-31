@@ -1,0 +1,80 @@
+<div class="container">
+    <div class="header">{{ editMode ? 'Edit Simulation' : 'Create a new simulation' }}</div>
+
+    <div class="form-container">
+        <div class="row">
+            <div class="input-container">
+                <label for="input-campaign-name">Name (N)</label>
+                <div class="input-area">
+                    <input id="input-campaign-name" type="text" maxlength="255" autocomplete="off" [(ngModel)]="n">
+                    <span class="required">*</span>
+                </div>
+            </div>
+    
+            <div class="input-container">
+                <label for="input-campaign-name">Population (P)</label>
+                <div class="input-area">
+                    <input id="input-campaign-name" type="number" maxlength="255" autocomplete="off" [(ngModel)]="p">
+                    <span class="required">*</span>
+                </div>
+            </div>
+    
+            <div class="input-container">
+                <label for="input-campaign-name">Infected (I)</label>
+                <div class="input-area">
+                    <input id="input-campaign-name" type="number" maxlength="255" autocomplete="off" [(ngModel)]="i">
+                    <span class="required">*</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="input-container">
+                <label for="input-campaign-name">Reproduction (R)</label>
+                <div class="input-area">
+                    <input id="input-campaign-name" type="number" maxlength="255" autocomplete="off" [(ngModel)]="r">
+                    <span class="required">*</span>
+                </div>
+            </div>
+    
+            <div class="input-container">
+                <label for="input-campaign-name">Mortality (M)</label>
+                <div class="input-area">
+                    <input id="input-campaign-name" type="number" maxlength="255" autocomplete="off" [(ngModel)]="m">
+                    <span class="required">*</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="input-container">
+                <label for="input-campaign-name">Time to recovery (Ti)</label>
+                <div class="input-area">
+                    <input id="input-campaign-name" type="number" maxlength="255" autocomplete="off" [(ngModel)]="ti">
+                    <span class="required">*</span>
+                </div>
+            </div>
+    
+            <div class="input-container">
+                <label for="input-campaign-name">Time to mortality (Tm)</label>
+                <div class="input-area">
+                    <input id="input-campaign-name" type="number" maxlength="255" autocomplete="off" [(ngModel)]="tm">
+                    <span class="required">*</span>
+                </div>
+            </div>
+    
+            <div class="input-container">
+                <label for="input-campaign-name">Simulation duration (Ts)</label>
+                <div class="input-area">
+                    <input id="input-campaign-name" type="number" maxlength="255" autocomplete="off" [(ngModel)]="ts">
+                    <span class="required">*</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <span class="error">{{ errorMessage }}</span>
+        <div id="submit-button" class="center" (click)="submit()">Submit</div>
+    </div>
+</div>

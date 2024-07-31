@@ -1,0 +1,22 @@
+/* You can add global styles to this file, and also import other style files */
+#main-container {
+  display: flex;
+  height: 100vh;
+  width: 100%;
+}
+
+app-aside-menu {
+  flex-shrink: 0;
+}
+
+app-campaign-list {
+  flex-grow: 1;
+}
+
+app-create-campaign {
+  flex-grow: 1;
+}
+
+app-edit-campaign {
+  flex-grow: 1;
+}/*# sourceMappingURL=styles.css.map */

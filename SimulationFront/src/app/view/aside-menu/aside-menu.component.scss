@@ -1,0 +1,40 @@
+@import "../../../assets/styles/base";
+
+aside {
+    width: 250px;
+    position: relative;
+
+    #aside-wrapper {
+        min-height: 100vh;
+        
+        position: fixed;
+        width: 250px;
+        top: 0;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        border-right: 2px solid $color-theme;
+
+        .title {
+            font-weight: 800;
+            padding: 5px 10px;
+            color: $color-theme;
+        }
+
+        ul {
+            list-style-type: none;
+            font-size: 1.2em;
+
+            li {
+                padding: 5px 10px;
+            }
+
+            li:hover {
+                cursor: pointer;
+                background-color: $color-dark;
+            }
+        }
+    }
+}

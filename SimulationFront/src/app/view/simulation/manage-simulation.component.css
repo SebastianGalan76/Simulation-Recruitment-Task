@@ -1,0 +1,13 @@
+.container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+.container .header {
+  font-weight: 600;
+  font-size: 2.6em;
+  padding: 50px;
+}/*# sourceMappingURL=manage-simulation.component.css.map */

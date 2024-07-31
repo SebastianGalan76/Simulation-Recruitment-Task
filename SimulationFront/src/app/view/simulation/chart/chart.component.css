@@ -1,0 +1,14 @@
+.chart {
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 20px;
+  border-radius: 20px;
+  background-color: rgba(0, 0, 0, 0.1647058824);
+  color: #f5f5f5;
+}
+.chart .title {
+  text-align: center;
+  font-weight: 800;
+  font-size: 1.4em;
+  padding: 15px 0;
+}/*# sourceMappingURL=chart.component.css.map */

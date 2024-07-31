@@ -1,0 +1,30 @@
+aside {
+  width: 250px;
+  position: relative;
+}
+aside #aside-wrapper {
+  min-height: 100vh;
+  position: fixed;
+  width: 250px;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-right: 2px solid #e2a258;
+}
+aside #aside-wrapper .title {
+  font-weight: 800;
+  padding: 5px 10px;
+  color: #e2a258;
+}
+aside #aside-wrapper ul {
+  list-style-type: none;
+  font-size: 1.2em;
+}
+aside #aside-wrapper ul li {
+  padding: 5px 10px;
+}
+aside #aside-wrapper ul li:hover {
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.1647058824);
+}/*# sourceMappingURL=aside-menu.component.css.map */
